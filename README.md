@@ -56,4 +56,50 @@ function task() {
 }
 ```
 
+If the task added to the empty queue, it will run immediately, otherwise it will be executed after other tasks finished.
+
+> And the internal queue based on [`tiny-linked-queue`](https://github.com/jinghua000/tiny-linked-queue#readme), if you want to manipulate the internal queue you can use the `queue` property.
+
+```js
+const queue = new Queue()
+queue.queue // => this property pint to the `tiny-linked-queue`.
+```
+
 ## Full demo
+
+```js
+function task1(next) {
+    setTimeout(() => {
+        console.log('task1 running.')
+        next()
+    }, 100)
+}
+
+function task2() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            console.log('task2 running.')
+            resolve()
+        }, 50)
+    })
+}
+
+function task3() {
+    console.log('task3 running.')
+}
+
+const Queue = require('tiny-async-task-queue')
+const queue = new Queue()
+queue.add(task1)
+queue.add(task2)
+queue.add(task3)
+
+// console will logs as below:
+// task1 running.
+// task2 running.
+// task3 running.
+```
+
+### Tests
+
+`yarn test`

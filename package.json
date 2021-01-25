@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A tiny async task queue with one API.",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "jest"
   },
@@ -10,8 +11,15 @@
     "type": "git",
     "url": "git+https://github.com/jinghua000/tiny-async-task-queue.git"
   },
-  "keywords": [],
-  "author": "",
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "keywords": [
+    "async",
+    "task-queue"
+  ],
+  "author": "shadow",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jinghua000/tiny-async-task-queue/issues"
