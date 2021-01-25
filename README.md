@@ -1,5 +1,8 @@
 # tiny-async-task-queue
 
+[![npm module](https://badge.fury.io/js/tiny-async-task-queue.svg)](https://www.npmjs.com/package/tiny-async-task-queue)
+[![size](https://badgen.net/bundlephobia/minzip/tiny-async-task-queue)](https://bundlephobia.com/result?p=tiny-async-task-queue)
+
 ## Introduction
 
 Here is a tiny async task queue, for several standalone task executing in order, with just one API.
