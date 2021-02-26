@@ -86,45 +86,34 @@ test('async task with promise', done => {
     })
 })
 
-test('when both promise and function is supplied, trigger the fast one', done => {
+test('when both promise and function is supplied, only trigger the fast one', done => {
     const queue = new Queue()
+    let counter = 0
 
-    let str1 = ''
     queue.add(function(next) {
         setTimeout(() => {
-            str1 = 'function1'
+            counter++
+            // if this next called successfully, counter will be 2
+            // otherwise will be 3
             next()
         }, 10)
 
-        return Promise.resolve().then(
-            () => str1 = 'promise1'
-        )
+        return Promise.resolve().then(() => {
+            counter++
+        })
     })
 
-    queue.add(function() {
-        expect(str1).toBe('promise1')
-    })
-
-    let str2 = ''
     queue.add(function(next) {
         setTimeout(() => {
-            str2 = 'function2'
+            counter++
             next()
-        })
-
-        return new Promise(resolve => {
-            setTimeout(() => {
-                str2 = 'promise2'
-                resolve()
-            }, 10)
-        })
+        }, 20)
     })
 
     queue.add(function() {
-        expect(str2).toBe('function2')
+        expect(counter).toBe(3)
+        done()
     })
-
-    queue.add(() => done())
 })
 
 test('mix promise and function, sync and async', done => {

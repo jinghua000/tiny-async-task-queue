@@ -26,6 +26,7 @@ class AsyncQueue {
         let called = false
         const next = () => {
             if (called) return
+            called = true
             this.queue.dequeue()
             this.run()
         }

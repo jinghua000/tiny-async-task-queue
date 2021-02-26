@@ -3259,10 +3259,10 @@ throat@^5.0.0:
   resolved "https://registry.yarnpkg.com/throat/-/throat-5.0.0.tgz#c5199235803aad18754a667d659b5e72ce16764b"
   integrity sha512-fcwX4mndzpLQKBS1DVYhGAcYaYt7vsHNIvQV+WXMvnow5cgjPphq5CaayLaGsjRdSCKZFNGt7/GYAuXaNOiYCA==
 
-tiny-linked-queue@1.0.3:
+tiny-linked-queue@^1.0.3:
   version "1.0.3"
-  resolved "https://registry.yarnpkg.com/tiny-linked-queue/-/tiny-linked-queue-1.0.3.tgz#c69e1dad7c305496f6e46ed6c8ef91bdd63232e9"
-  integrity sha512-VPizSr9n/J+C2dwKlVx3i1P6krr3LF7+hCDYq2vpdyhBQwg7hoQbNbYNvtQkGbLIym+TLoKtDh4UOiV5RY8Bdw==
+  resolved "http://npm.ddxq.mobi/tiny-linked-queue/-/tiny-linked-queue-1.0.3.tgz#c69e1dad7c305496f6e46ed6c8ef91bdd63232e9"
+  integrity sha1-xp4drXwwVJb25G7WyO+RvdYyMuk=
 
 tmpl@1.0.x:
   version "1.0.4"

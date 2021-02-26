@@ -1,11 +1,11 @@
 {
   "name": "tiny-async-task-queue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tiny async task queue with one API.",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/jinghua000/tiny-async-task-queue#readme",
   "dependencies": {
-    "tiny-linked-queue": "1.0.3"
+    "tiny-linked-queue": "^1.0.3"
   },
   "devDependencies": {
     "@types/jest": "^26.0.20",
